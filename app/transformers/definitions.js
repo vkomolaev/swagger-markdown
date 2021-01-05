@@ -57,7 +57,7 @@ const parsePrimitive = (name, definition) => {
  * @return {type} Description
  */
 const processDefinition = (name, def, skipHead) => {
-  const definition = {...def};
+  const definition = Object.assign({}, def);
   let res = [];
   let parsedDef = [];
 
