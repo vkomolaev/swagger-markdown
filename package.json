@@ -15,9 +15,6 @@
     "semantic-release": "semantic-release",
     "make:examples": "node make-examples.js"
   },
-  "bin": {
-    "swagger-markdown": "bin/index.js"
-  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
@@ -43,9 +40,6 @@
       "@semantic-release/git",
       "@semantic-release/github"
     ]
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",

@@ -21,7 +21,9 @@ function partiallyDereference(node, $refs) {
     if (Array.isArray(value)) {
       obj[key] = value.map(item => partiallyDereference(item, $refs));
     } else if (key === '$ref' && !value.startsWith('#/definitions/')) {
-      return partiallyDereference({...{propRef:true}, ...$refs.get(value)}, $refs);
+      const obj = Object.assign({}, $refs.get(value));
+      obj.propRef = true;
+      return partiallyDereference(obj, $refs);
     } else {
       obj[key] = partiallyDereference(value, $refs);
     }
